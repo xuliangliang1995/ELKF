@@ -1,6 +1,6 @@
 filebeat.inputs:
   - type: log
     paths:
-      - ~/config/logs/logs.log
+      - ~/home/logs/logs.log
 output.logstash:
   hosts: ["localhost:5044"]
