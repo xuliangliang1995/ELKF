@@ -5,4 +5,4 @@ filebeat.inputs:
       - ~/home/logs/logs.log
 output.logstash:
   enabled: true
-  hosts: ["localhost:5044"]
+  hosts: ["logstash:5044"]
