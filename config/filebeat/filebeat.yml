@@ -3,7 +3,7 @@ filebeat.inputs:
     enabled: true
     paths:
       - /home/logs/pk_user/pk_user_info.log
-    multiline.pattern: "^%{TIMESTAMP_ISO8601}"
+    multiline.pattern: "^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}.?\d{0,3}$"
     multiline.negate: true
     multiline.match: after
 output.logstash:
