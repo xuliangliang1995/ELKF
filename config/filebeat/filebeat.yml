@@ -2,7 +2,7 @@ filebeat.inputs:
   - type: log
     enabled: true
     paths:
-      - /home/logs/picker_user/*.log
+      - /home/logs/picker_user/pk_user_info.log
 output.logstash:
   enabled: true
   hosts: ["logstash:5044"]
