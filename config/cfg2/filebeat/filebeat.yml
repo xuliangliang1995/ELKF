@@ -1,5 +1,5 @@
 filebeat.inputs:
-  - type: container
+  - type: log
     enabled: true
     paths:
       # 读取 docker 容器的日志
