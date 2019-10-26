@@ -5,7 +5,7 @@ filebeat.inputs:
       # 读取 docker 容器的日志
       - '/var/lib/docker/containers/*/*.log'
     # json 解析
-    json.keys_under_root: true
+    json.keys_under_root: false
     json.add_error_key: true
     json.overwrite_keys: true
     json.message_key: log
