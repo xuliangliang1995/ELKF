@@ -7,7 +7,8 @@ filebeat.inputs:
     # json 解析
     json.keys_under_root: true
     json.add_error_key: true
-    json.message_key: msg
+    json.overwrite_keys: false
+    json.message_key: log
 
     multiline.pattern: '^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}.?\d{0,3}'
     multiline.negate: true
