@@ -1,16 +1,16 @@
 version: "3"
-  services:
-    pickerUser:
-      image: registry.cn-beijing.aliyuncs.com/grasswort/picker-user:latest
-      ports:
-        - 10001:10001
-      labels:
-        - "servicename=pickerUser"
-      logging:
-        driver: "json-file"
-        options:
-          labels: "servicename"
-          tag: "{{.ImageName}}/{{.Name}}/{{.ID}}"
-          max-size: "100m"
-          max-file: "10"
+services:
+  pickerUser:
+    image: registry.cn-beijing.aliyuncs.com/grasswort/picker-user:latest
+    ports:
+      - 10001:10001
+    labels:
+      - "servicename=pickerUser"
+    logging:
+      driver: "json-file"
+      options:
+        labels: "servicename"
+        tag: "{{.ImageName}}/{{.Name}}/{{.ID}}"
+        max-size: "100m"
+        max-file: "10"
 
