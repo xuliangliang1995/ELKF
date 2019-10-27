@@ -40,4 +40,4 @@ services:
     ports:
       - 5044:5044
     volumes:
-      - "~/config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf"
+      - "~/ELKF/config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf"
