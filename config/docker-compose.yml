@@ -2,6 +2,7 @@ version: "3"
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
+    container_name: elasticsearch
     environment:
       - cluster.name=elasticsearch
       - bootstrap.memory_lock=true
@@ -18,6 +19,7 @@ services:
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.4.1
+    container_name: kibana
     links:
       - elasticsearch
     depends_on:
@@ -30,6 +32,7 @@ services:
 
   logstash:
     image: docker.elastic.co/logstash/logstash:7.4.1
+    container_name: logstash
     links:
       - elasticsearch
     depends_on:
