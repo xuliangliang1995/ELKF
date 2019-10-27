@@ -1,0 +1,1 @@
+docker run --name filebeat -u root -d --privileged=true -v ~/filebeat/data:/usr/share/filebeat/data -v ~/ELKF/config/filebeat.yml:/usr/share/filebeat/filebeat.yml -v /var/lib/docker/containers/:/var/lib/docker/containers/ docker.elastic.co/beats/filebeat:7.4.1

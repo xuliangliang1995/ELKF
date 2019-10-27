@@ -14,3 +14,25 @@ services:
         max-size: "100m"
         max-file: "10"
 
+  elasticsearch:
+    image: docker.elastic.co/beats/filebeat:7.4.1
+    environment:
+      - cluster.name=elasticsearch
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx3g"
+      ulimits:
+        memlock:
+          soft: -1
+          hard: -1
+      ports:
+        - 9200:9200
+        - 9300:9300
+      volumes:
+        - "/home/xuliang/esdata:/usr/share/elasticsearch/data"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.4.1
+    environment:
+      ELASTICSEARCH_HOSTS: http://localhost:9200
+    ports:
+      - 5601:5601
