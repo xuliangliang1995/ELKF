@@ -42,12 +42,13 @@ services:
     volumes:
       - "~/ELKF/config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf"
 
-  jenkins:
-    image: docker.io/jenkins/jenkins
-    container_name: jenkins
-    ports:
-      - 8080:8080
-      - 50000:5000
-    volumes:
-      - "~/jenkins_home/:/var/jenkins_home/"
+# 不通过 docker 安装 jenkins ， 感觉比较恶心
+#  jenkins:
+#    image: docker.io/jenkins/jenkins
+#    container_name: jenkins
+#    ports:
+#      - 8080:8080
+#      - 50000:5000
+#    volumes:
+#      - "~/jenkins_home/:/var/jenkins_home/"
 
