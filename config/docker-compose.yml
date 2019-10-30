@@ -3,10 +3,11 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
     container_name: elasticsearch
+    restart: always
     environment:
       - discovery.type=single-node
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms3072m -Xmx3072m"
+      - "ES_JAVA_OPTS=-Xms3072m -Xmx2048m"
     ulimits:
       memlock:
         soft: -1
@@ -20,6 +21,7 @@ services:
   kibana:
     image: docker.elastic.co/kibana/kibana:7.4.1
     container_name: kibana
+    restart: always
     links:
       - elasticsearch
     depends_on:
@@ -33,6 +35,7 @@ services:
   logstash:
     image: docker.elastic.co/logstash/logstash:7.4.1
     container_name: logstash
+    restart: always
     links:
       - elasticsearch
     depends_on:
