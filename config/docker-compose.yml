@@ -7,7 +7,7 @@ services:
     environment:
       - discovery.type=single-node
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms3072m -Xmx2048m"
+      - "ES_JAVA_OPTS=-Xms3072m -Xmx3072m"
     ulimits:
       memlock:
         soft: -1
