@@ -5,7 +5,7 @@ services:
     container_name: elasticsearch
     restart: always
     environment:
-      - discovery.type=single-node
+      - cluster.name=elasticsearch
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms3072m -Xmx3072m"
     ulimits:
