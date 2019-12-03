@@ -14,6 +14,7 @@ services:
         hard: -1
     volumes:
       - esdata1:/usr/share/elasticsearch/data
+      - /home/xuliang/ik:/usr/share/elasticsearch/plugins/ik
     ports:
       - 9200:9200
       - 9300:9300
@@ -34,6 +35,7 @@ services:
         hard: -1
     volumes:
       - esdata2:/usr/share/elasticsearch/data
+      - /home/xuliang/ik:/usr/share/elasticsearch/plugins/ik
     ports:
       - 9201:9200
       - 9301:9300
@@ -54,6 +56,7 @@ services:
         hard: -1
     volumes:
       - esdata3:/usr/share/elasticsearch/data
+      - /home/xuliang/ik:/usr/share/elasticsearch/plugins/ik
     ports:
       - 9202:9200
       - 9302:9300
@@ -64,14 +67,10 @@ services:
     image: docker.elastic.co/kibana/kibana:6.8.4
     container_name: kibana
     restart: always
-    links:
-      - elasticsearch_1
-    depends_on:
-      - elasticsearch_1
     ports:
       - 5601:5601
     environment:
-      ELASTICSEARCH_HOSTS: http://elasticsearch_1:9200
+      ELASTICSEARCH_HOSTS: http://114.67.105.79:9200
 
 volumes:
   esdata1:
